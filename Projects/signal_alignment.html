@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title> Signal Alignment </title>
+      <link rel="icon" href="../images/logo.png" type="image/x-icon">
+      <link rel="stylesheet" href="../loadingCSS.css"></link>
+      <script src="../loadScript.js"></script>
+      <style>
+
+      </style>
+    </head>
+    <body>
+      <div class="loading_icon" id="loading_icon">
+        <svg>
+          <circle cx="50" cy="50" r="40" stroke="#432818" stroke-width="3" fill="transparent">
+        </svg>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">About Me</a></li>
+
+          <li>
+            <div id="total_dropdown">
+              <a href="../projects.html" id="dropdown_select">Projects</a>
+              <div class="dropdown">
+                <a href="signal_alignment.html">Signal Alignment</a>
+                <a href="huff_compression.html"
+                  >Huffman Compression</a
+                >
+                <a href="twitter_api.html">Twitter API</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="../resume.html">Resume</a></li>
+          <li><a href="../contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+      <div id="page_body">
+      <h1>Elecropherogram Alignment</h1>
+      <p>
+        While there is no cure to Parkinson’s disease, the onset of symptoms
+        could potentially be delayed with more accurate, early diagnosis.
+      </p>
+      <figure>
+        <img src="../images/unaligned_signals.jpg"
+             alt="3D Plot of Signals Before Alignment Algorithm"
+             width=500>
+        <img src="../images/aligned_signals.jpg"
+            alt="3D Plot of Signals After Chained Approach Alignment Algorithm"
+            width=500>
+            <figcaption>
+              The plot on the left shows the signals before alignment.
+              The plot on the right shows the signals after they are aligned
+              using the chained approach.
+            </figcaption
+      </figure>
+      <p>
+        This study examined optimizing a tool to be utilized when analyzing
+        data to determine relationships between the amount of certain molecules
+        in the plasma of Parkinson's patients, thus discovering the
+        identification of molecular fingerprints unique to Parkinson's disease
+        pathology.
+      </p>
+      <p> The study examines two approaches to capillary zone electrophoresis
+        alignment: the linear and chained approaches.
+        Both algorithms begin by calculating the total DTW distance for each
+        signal against every other signal, and storing the results in a matrix.
+        Then the algorithms sum the combined distances
+        for each signal, and finding the signal with the minimum sum.
+        Then the algorithms take different approaches in which signals are
+        aligned next:
+      </p>
+      <h2>Linear Approach</h2>
+      <p>
+        Aligns every other signal with the signal with the lowest total DTW
+        distance
+      </p>
+      <h2>Chained Approach</h2>
+      <p>
+        Aligns signals with the signal that has the lowest total Euclidean
+        distance from itself
+      </p>
+      <p>
+        After aligning the signals using DTW, both algorithms align the widths
+        of every peak using interpolation
+      </p>
+      <h2>Results</h2>
+      <figure>
+        <table>
+          <tr>
+            <th rowspan = 4>
+              Type of Alignment
+            </th>
+            <!--<th colspn = 3> Alignment Results</th>-->
+            <th colspan = 2>Alignment Score</th>
+        </tr>
+          <tr>
+            <th>
+              No Alignment
+            </th>
+            <td>
+               0.331
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Stepped Alignment
+            </th>
+            <td>
+              0.132
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Chained Alignment
+            </th>
+            <td>
+               0.077
+            </td>
+          </tr>
+      </table>
+      <figcaption>
+        The table displays the alignment score for various Electropherogram
+        alignment algorithms. The alignment score is calculated using the
+        point-wise standard deviations.
+      </figcaption>
+    </figure>
+    <p>
+      While this analysis does not take into account over-fitting of the signals
+      from DTW alignment, the chained alignment results in the greatest
+      improvement.
+      <br>
+      This approach could be implemented in wider studies examining the amount
+      of molecules present in the blood stream of Parkinson’s patients.
+    </p>
+    <div id="footer">
+    <footer>
+      Kaitlin Smith |
+      <a href="https://www.linkedin.com/in/kaitlin-m-smith/" target="_blank">
+        <img class="linkedIn" src="../images/LinkedIn-Logos/LI-Logo.png" alt="LinkedIn"></a
+      >
+    </footer>
+    </div>
+    </body>
+  </html>

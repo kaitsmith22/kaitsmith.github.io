@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title> Resume </title>
+      <link rel="icon" href="images/logo.png" type="image/x-icon">
+      <link rel="stylesheet" href="loadingCSS.css">
+      <script src="loadScript.js"></script>
+    </head>
+    <body>
+      <div class="loading_icon" id="loading_icon">
+        <svg>
+          <circle cx="50" cy="50" r="40" stroke="#432818" stroke-width="3" fill="transparent">
+        </svg>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">About Me</a></li>
+
+          <div id="total_dropdown">
+              <li><a href="projects.html" id="dropdown_select">Projects</a></li>
+            <div class="dropdown">
+              <a href="Projects/signal_alignment.html">Signal Alignment</a>
+              <a href="Projects/huff_compression.html"
+                >Huffman Compression</a
+              >
+              <a href="Projects/twitter_api.html">Twitter API</a>
+            </div>
+          </div>
+
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+      <h1>Resume.</h1>
+      <div class="page_body2">
+      <p class="content" >
+        Looking for a PDF copy of my resume? Find it here:
+        <a href="files/resume.pdf" target="_blank" class="style_button">resume.pdf</a>
+      </p>
+      <div  class="content">
+      <h2>Skills</h2>
+      <ul>
+        <div id="skills_div">
+        <li class="skills" skill="Pytorch" alt ="Built and trained image classifiers using Pytorch">
+          Pytorch
+        </li>
+        <li class="skills" skill="Java" alt="Experience implementing algorithms, games, and programs in Java">
+          Java
+        </li>
+        <li class="skills" skill = "C/C++" alt="Experience coding with C and C++, including structures">
+          C/C++
+        </li>
+        <div>
+      </ul>
+    </div>
+    <div  class="content">
+      <h2>Work Experience</h2>
+      <dl>
+        <dt>Artificial Integlligence Research Intern</dt>
+        <dd>
+          Developed an image dataset from aerial footage using active learning.
+          Developed and tested scoring functions to choose the most relevant
+          images to include in the dataset for manual labeling. Trained
+          iterations of an object detector using Pytorch. Developed code
+          with a team using the agile software design workflow.
+        </dd>
+        <dt> Research Assistant </dt>
+        <dd>
+          Worked towards early diagnosis of Parkinson’s disease by both
+          implementing code in Matlab to align signals using gap insertion and
+          Dynamic Time Warping and designing a fully automated positive pressure
+           Capillary Zone Electrophoresis through rapid prototyping and
+           interfacing with Labview.
+        </dd>
+        <dt> Math Center Tutor</dt>
+        <dd>
+          Assisted my peers in learning calculus through communicating technical
+           conepts clearly.
+        </dd>
+      </dl>
+    </div>
+    </div>
+      <footer id="footer"> Kaitlin Smith |
+        <a href="https://www.linkedin.com/in/kaitlin-m-smith/"
+           target="_blank">
+        <img class="linkedIn" src="images/LinkedIn-Logos/LI-Logo.png" alt="LinkedIn"></a>
+      </footer>
+    </body>
+    <script>
+      var skills = document.getElementsByClassName('skills')
+      console.log('skills are ',skills)
+      for (var i = 0; i < skills.length; i++) {
+        skills[i].addEventListener("mouseover", function() {
+          console.log('changing text')
+          let alt = this.getAttribute('alt');
+          console.log(alt)
+          this.innerText= alt
+        });
+        skills[i].addEventListener("mouseleave", function() {
+          console.log('changing back')
+          let skill = this.getAttribute('skill');
+          this.innerText = skill;
+        });
+    }
+    </script>
+  </html>

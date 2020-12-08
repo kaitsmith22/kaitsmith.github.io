@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exploring Twitter API</title>
+    <link rel="icon" href="../images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../loadingCSS.css">
+    <script src="../loadScript.js"></script>
+    <!-- Twitter widget code  -->
+    <script>
+      window.twttr = (function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+
+        return t;
+      })(document, "script", "twitter-wjs");
+    </script>
+  </head>
+  <body id="body">
+    <div class="loading_icon" id="loading_icon">
+      <svg>
+        <circle cx="50" cy="50" r="40" stroke="#432818" stroke-width="3" fill="transparent">
+      </svg>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">About Me</a></li>
+
+        <li>
+          <div id="total_dropdown">
+            <a href="../projects.html" id="dropdown_select">Projects</a>
+            <div class="dropdown">
+              <a href="signal_alignment.html">Signal Alignment</a>
+              <a href="huff_compression.html"
+                >Huffman Compression</a
+              >
+              <a href="twitter_api.html">Twitter API</a>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="../contact.html">Contact me</a></li>
+      </ul>
+    </nav>
+    <h1>Exploring Twitter API</h1>
+    <div class="columns">
+    <div class="left">
+    <form class="content">
+      <p>
+        It was difficult to access a lot of API's due to CORs policies and this
+        website does not yet have a backend. However, I was able to implement
+        the widgets in the Twitter javascript URI. I created a div where the
+        content is replaced with a new timeline widget each time the user enters
+        a twitter user.
+      </p>
+      <label>Enter a user to search </label>
+      <input id="user" type="text" value="Kaitlin60417603" />
+      <input id="submit" type="button" value="Go!" class="style_button"/>
+    </form>
+  </div>
+    <div id="container" class="right">
+      <a
+        id="twitterSearch"
+        class="twitter-timeline"
+        href="https://twitter.com/Kaitlin60417603?ref_src=twsrc%5Etfw"
+        >Tweets by Kaitlin</a>
+    </div>
+  </div>
+  <div id="footer">
+  <footer>
+    Kaitlin Smith |
+    <a href="https://www.linkedin.com/in/kaitlin-m-smith/" target="_blank">
+      <img class="linkedIn" src="../images/LinkedIn-Logos/LI-Logo.png" alt="LinkedIn"></a
+    >
+  </footer>
+  </div>
+  </body>
+  <script>
+  // update the user to query for upon pushing the button
+    let submit = document.getElementById("submit");
+    submit.addEventListener("click", function() {
+      document.getElementById(
+        "container"
+      ).innerHTML = twttr.widgets.createTimeline(
+        {
+          sourceType: "profile",
+          screenName: user.value
+        },
+        document.getElementById("container")
+      );
+    });
+  </script>
+</html>

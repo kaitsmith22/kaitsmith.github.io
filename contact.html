@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Contact Me</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="loadingCSS.css" />
+    <script src="loadScript.js"></script>
+  </head>
+  <body>
+    <div id="page">
+      <div class="loading_icon" id="loading_icon">
+        <svg>
+          <circle cx="50" cy="50" r="40" stroke="#432818" stroke-width="3" fill="transparent">
+        </svg>
+      </div>
+      <div id="page_body">
+        <nav>
+          <ul>
+            <li><a href="index.html">About Me</a></li>
+
+            <div id="total_dropdown">
+                <li><a href="projects.html" id="dropdown_select">Projects</a></li>
+              <div class="dropdown">
+                <a href="Projects/signal_alignment.html">Signal Alignment</a>
+                <a href="Projects/huff_compression.html"
+                  >Huffman Compression</a
+                >
+                <a href="Projects/twitter_api.html">Twitter API</a>
+              </div>
+            </div>
+
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact me</a></li>
+          </ul>
+        </nav>
+        <h1>Contact Me</h1>
+        <form action="form-handler" method="POST">
+          <fieldset>
+            <legend>Contact Me</legend>
+            <div id="fieldContent"
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              pattern="[\w|\s]{1,300}"
+              placeholder="John Doe"
+            />
+            <br />
+
+            <textarea
+              type="text"
+              id="message"
+              name="message"
+              pattern="[\w|\s]{1,300}"
+              placeholder="Type your message here"
+              rows=10
+              cols=70
+            ></textarea>
+            <button type="button" id="button">
+              Send
+            </button>
+          </div>
+          </fieldset>
+        </form>
+        <div id="footer">
+          <footer>
+            Kaitlin Smith |
+            <a
+              href="https://www.linkedin.com/in/kaitlin-m-smith/"
+              target="_blank"
+            >
+              <img class="linkedIn" src="images/LinkedIn-Logos/LI-Logo.png" alt="LinkedIn"></a
+            >
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById('button').addEventListener('click',function () {
+      let mailBody=document.getElementById('message').value;
+      window.location="mailto:kaitlin.m.smith@du.edu?subject=hello!&body="+mailBody;
+    });
+  </script>
+</html>

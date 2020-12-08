@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title> Projects </title>
+      <link rel="icon" href="images/logo.png" type="image/x-icon">
+      <link rel="stylesheet" href="loadingCSS.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="loadScript.js"></script>
+    </head>
+    <body>
+      <div class="loading_icon" id="loading_icon">
+        <svg>
+          <circle cx="50" cy="50" r="40" stroke="#432818" stroke-width="3" fill="transparent">
+        </svg>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">About Me</a></li>
+
+          <div id="total_dropdown">
+              <li><a href="projects.html" id="dropdown_select">Projects</a></li>
+            <div class="dropdown">
+              <a href="Projects/signal_alignment.html">Signal Alignment</a>
+              <a href="Projects/huff_compression.html"
+                >Huffman Compression</a
+              >
+              <a href="Projects/twitter_api.html">Twitter API</a>
+            </div>
+          </div>
+
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+      <h1>Projects</h1>
+      <div class="img_slider">
+        <div id="right_arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>
+        </div>
+        <div class="img-slider-elem" id="sigAlign">
+          <a href = Projects/signal_alignment.html >
+            <figure>
+            <img src="images/aligned_signals.jpg" alt="Signal Alignment">
+            <span id="project_title">Signal Alignment </span>
+          </figure>
+          </a>
+        </div>
+        <div class="img-slider-elem">
+          <a href = Projects/huff_compression.html>
+            <figure>
+            <img src="images/huff_compression.jpg" alt="Huffman Compression">
+            <span id="project_title">Huffman Compression</span>
+            <figcaption>Image Source: https://www2.cs.duke.edu/csed/poop/huff/info/</figcaption>
+          </figure>
+          </a>
+        </div>
+        <div class="img-slider-elem">
+          <a href = Projects/twitter_api.html>
+            <figure>
+            <img src="images/twitter.jpg" alt="Twitter API">
+            <span id="project_title">Twitter API</span>
+            <figcaption>Image Source: http://www.norwoodlibrary.org/what-you-need-to-know-twitter-tweeting/</figcaption>
+          </figure>
+          </a>
+        </div>
+        <div id="left_arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+        </div>
+      </div>
+      <div id="footer">
+      <footer>
+        Kaitlin Smith |
+        <a href="https://www.linkedin.com/in/kaitlin-m-smith/" target="_blank">
+          <img class="linkedIn" src="images/LinkedIn-Logos/LI-Logo.png" alt="LinkedIn"></a
+        >
+      </footer>
+    </body>
+      <script>
+        var slideIndex = 0;
+        var slides = document.getElementsByClassName("img-slider-elem")
+
+        // set timer to swipe image every 4 seconds
+        var timerSlide = setInterval(function() {
+          slideIndex = slideIndex + 1;
+          swipeImage(slideIndex);
+        }, 6000);
+
+        carouselImgs();
+        // if left arrow is clicked, swipe left
+        // we stop the carousel function if the user clicks
+        document.getElementById("left_arrow").addEventListener('click', function (){
+          clearInterval(timerSlide)
+          slideIndex = slideIndex - 1;
+          swipeImage(slideIndex);
+        });
+
+        // if right arrow is clicked, swipe right
+        // we stop the carousel function if the user clicks
+        document.getElementById('right_arrow').addEventListener('click', function (){
+          clearInterval(timerSlide)
+          slideIndex = slideIndex + 1;
+          swipeImage(slideIndex)
+        });
+
+        function swipeImage(n) {
+          if (slideIndex < 0){
+            slideIndex = slides.length - 1;
+            carouselImgs();
+          }
+          else if (slideIndex >= slides.length){
+            slideIndex = 0
+            carouselImgs();
+          }
+          else {
+            carouselImgs();
+          }
+        };
+
+        function carouselImgs(){
+            for (i=0; i < slides.length; i++){
+              slides[i].style.display = "none"
+            }
+            slides[slideIndex].style.display = "block";
+          }
+      </script>
+  </html>
