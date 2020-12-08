@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>About Me</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="loadingCSS.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="loadScript.js"></script>
+    <script type="text/javascript">
+      var time_animate = 750;
+      // Helper function to start annimation
+      function annimate(_callback) {
+        document.getElementById("animate_polygon").beginElement();
+        document.getElementById("animate_first").beginElement();
+                document.getElementById("animate_first_x").beginElement();
+        document.getElementById("animate_last").beginElement();
+        document.getElementById("animate_last_x").beginElement();
+        _callback();
+      }
+      function set_points(){
+        annimate(function() {
+          let left = document.getElementById("polygon");
+          setTimeout(function() {
+            left.setAttribute("points", "0,0 100,0 10,100 0,100");
+            document.getElementById("first").setAttribute("y", 45);
+            document.getElementById("first").setAttribute("x", 15);
+            document.getElementById("last").setAttribute("y", 55);
+                        document.getElementById("last").setAttribute("x", 55);
+          }, time_animate);
+        });
+      }
+      // On load, start annimation
+      // Wait for asynchronous annimation to finish and then set new attribute
+      // values. This is because after the annimation the shapes and text
+      // will go back to their original values if they are not reset
+      window.addEventListener("load", function() {
+        setTimeout(set_points,1000);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="loading_icon" id="loading_icon">
+      <svg>
+        <circle cx="50" cy="50" r="40" stroke="#432818" stroke-width="3" fill="transparent">
+      </svg>
+    </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">About Me</a></li>
+
+
+              <div id="total_dropdown">
+                <li><a href="projects.html" id="dropdown_select">Projects</a></li>
+              <div class="dropdown">
+                <a href="Projects/signal_alignment.html">Signal Alignment</a>
+                <a href="Projects/huff_compression.html"
+                  >Huffman Compression</a
+                >
+                <a href="Projects/twitter_api.html">Twitter API</a>
+              </div>
+            </div>
+
+
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact me</a></li>
+        </ul>
+      </nav>
+    <div class="title">
+      <svg
+        class="polygon_left"
+        width="100%"
+        viewBox="0 0 100 100"
+        height="100vh"
+        cursor="pointer" pointer-events="all"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio=none
+      >
+        <polygon id="polygon" points="0,0 50,0 50,100 0,100">
+          <animate
+            attributename="points"
+            dur="750ms"
+            id="animate_polygon"
+            begin="indefinite"
+            to="0,0 100,0 10,100 0,100"
+          ></animate>
+        </polygon>
+        <text class="name" id="first" x="7" y="50">
+          kaitlin
+          <animate
+            attributename="y"
+            dur="750ms"
+            id="animate_first"
+            begin="indefinite"
+            to="45"
+          ></animate>
+          <animate
+            attributename="x"
+            dur="750ms"
+            id="animate_first_x"
+            begin="indefinite"
+            to="15"
+          ></animate>
+        </text>
+        <text class="name" id="last" x="50" y="50">
+          smith
+          <animate
+            attributename="y"
+            dur="750ms"
+            id="animate_last"
+            begin="indefinite"
+            to="55"
+          ></animate>
+          <animate
+            attributename="x"
+            dur="750ms"
+            id="animate_last_x"
+            begin="indefinite"
+            to="55"
+          ></animate>
+        </text>
+        <polygon
+          id="down_arrow"
+          points="45,80 50,85 55,80 53,80 50,83 47,80"
+        />
+      </svg>
+    </div>
+    <div class="page_body">
+      <h1>About Me</h1>
+      <div id="content">
+        <img class="profilePic" src="images/profile_pic.jpg" alt="Kaitlin" />
+      <p>
+        Hello! My name is Kaitlin Smith. I am a motivated student at the
+        University of Denver pursuing a degree in computer science. I am
+        interested in computer vision, signal alignment, and neural networks. I
+        also enjoy hiking and exploring beautiful Colorado!
+        <br>
+        Explore the links above to see projects I've completed and my resume.
+      </p>
+    </div>
+    </div>
+    <div id="footer">
+    <footer>
+      Kaitlin Smith |
+      <a href="https://www.linkedin.com/in/kaitlin-m-smith/" target="_blank">
+        <img class="linkedIn" src="images/LinkedIn-Logos/LI-Logo.png" alt="LinkedIn"></a
+      >
+    </footer>
+  </div>
+  </body>
+  <script type="text/javascript">
+  // Event will scroll the width of the view height when the down arrow is clicked
+    $("#down_arrow").click(function() {
+      window.scrollBy(0, ($(window).outerHeight() / 100) * 100);
+    });
+  </script>
+</html>
