@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Exploring Twitter API</title>
     <link rel="icon" href="../images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="../loadingCSS.css">
@@ -34,25 +35,32 @@
       </svg>
     </div>
     <nav>
-      <ul>
-        <li><a href="../index.html">About Me</a></li>
-
-        <li>
-          <div id="total_dropdown">
-            <a href="../projects.html" id="dropdown_select">Projects</a>
+        <a id="mobile_drop"> <div><svg viewBox="0 0 100 80" width="40" height="50">
+<rect width="100" height="20"></rect>
+<rect y="30" width="100" height="20"></rect>
+<rect y="60" width="100" height="20"></rect>
+</svg>
+</div>
+        </a>
+        <div class = "mobile_hidden">
+        <a href="index.html" class="menu_element">About Me</a>
+            <div id="total_dropdown" class="menu_element">
+              <a href="projects.html" id="dropdown_select">Projects</a>
             <div class="dropdown">
-              <a href="signal_alignment.html">Signal Alignment</a>
-              <a href="huff_compression.html"
+              <a href="Projects/signal_alignment.html">Signal Alignment</a>
+              <a href="Projects/huff_compression.html"
                 >Huffman Compression</a
               >
-              <a href="twitter_api.html">Twitter API</a>
+              <a href="Projects/twitter_api.html">Twitter API</a>
             </div>
-          </div>
-        </li>
 
-        <li><a href="../resume.html">Resume</a></li>
-        <li><a href="../contact.html">Contact me</a></li>
-      </ul>
+          </div>
+
+
+        <a href="resume.html" class="menu_element">Resume</a>
+        <a href="contact.html" class="menu_element">Contact me</a>
+        </div>
+
     </nav>
     <h1>Exploring Twitter API</h1>
     <div class="columns">
