@@ -17,12 +17,17 @@
         </svg>
       </div>
       <nav>
-        <ul>
-          <li><a href="../index.html">About Me</a></li>
-
-          <li>
-            <div id="total_dropdown">
-              <a href="../projects.html" id="dropdown_select">Projects</a>
+          <a id="mobile_drop"> <div><svg viewBox="0 0 100 80" width="40" height="50">
+  <rect width="100" height="20"></rect>
+  <rect y="30" width="100" height="20"></rect>
+  <rect y="60" width="100" height="20"></rect>
+</svg>
+</div>
+          </a>
+          <div class = "mobile_hidden">
+          <a href="../index.html" class="menu_element">About Me</a>
+              <div id="total_dropdown" class="menu_element">
+                <a href="projects.html" id="dropdown_select">Projects</a>
               <div class="dropdown">
                 <a href="signal_alignment.html">Signal Alignment</a>
                 <a href="huff_compression.html"
@@ -30,14 +35,16 @@
                 >
                 <a href="twitter_api.html">Twitter API</a>
               </div>
-            </div>
-          </li>
 
-          <li><a href="../resume.html">Resume</a></li>
-          <li><a href="../contact.html">Contact me</a></li>
-        </ul>
+            </div>
+
+
+          <a href="../resume.html" class="menu_element">Resume</a>
+          <a href="../contact.html" class="menu_element">Contact me</a>
+          </div>
+
       </nav>
-      <div id="page_body">
+      <div id="page_body_what">
       <h1>Elecropherogram Alignment</h1>
       <p>
         While there is no cure to Parkinson’s disease, the onset of symptoms
@@ -54,7 +61,7 @@
               The plot on the left shows the signals before alignment.
               The plot on the right shows the signals after they are aligned
               using the chained approach.
-            </figcaption
+            </figcaption>
       </figure>
       <p>
         This study examined optimizing a tool to be utilized when analyzing

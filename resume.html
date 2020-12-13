@@ -14,30 +14,42 @@
         </svg>
       </div>
       <nav>
-        <ul>
-          <li><a href="index.html">About Me</a></li>
+          <a id="mobile_drop"> <div><svg viewBox="0 0 100 80" width="40" height="50">
+  <rect width="100" height="20"></rect>
+  <rect y="30" width="100" height="20"></rect>
+  <rect y="60" width="100" height="20"></rect>
+</svg>
+</div>
+          </a>
+          <div class = "mobile_hidden">
+          <a href="index.html" class="menu_element">About Me</a>
+              <div id="total_dropdown" class="menu_element">
+                <a href="projects.html" id="dropdown_select">Projects</a>
+              <div class="dropdown">
+                <a href="Projects/signal_alignment.html">Signal Alignment</a>
+                <a href="Projects/huff_compression.html"
+                  >Huffman Compression</a
+                >
+                <a href="Projects/twitter_api.html">Twitter API</a>
+              </div>
 
-          <div id="total_dropdown">
-              <li><a href="projects.html" id="dropdown_select">Projects</a></li>
-            <div class="dropdown">
-              <a href="Projects/signal_alignment.html">Signal Alignment</a>
-              <a href="Projects/huff_compression.html"
-                >Huffman Compression</a
-              >
-              <a href="Projects/twitter_api.html">Twitter API</a>
             </div>
+
+
+          <a href="resume.html" class="menu_element">Resume</a>
+          <a href="contact.html" class="menu_element">Contact me</a>
           </div>
 
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact me</a></li>
-        </ul>
       </nav>
       <h1>Resume.</h1>
       <div class="page_body2">
-      <p class="content" >
+      <div class = "content"
+      <p>
         Looking for a PDF copy of my resume? Find it here:
         <a href="files/resume.pdf" target="_blank" class="style_button">resume.pdf</a>
       </p>
+    </div>
+
       <div  class="content">
       <h2>Skills</h2>
       <ul>
@@ -51,7 +63,7 @@
         <li class="skills" skill = "C/C++" alt="Experience coding with C and C++, including structures">
           C/C++
         </li>
-        <div>
+      </div>
       </ul>
     </div>
     <div  class="content">

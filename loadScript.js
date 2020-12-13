@@ -26,7 +26,6 @@ window.addEventListener("load", function() {
       let items = document.getElementsByClassName("dropdown");
       let i;
       for (i = 0; i < items.length; i++) {
-        console.log("visible");
         items[i].style.display = "block";
         items[i].style.visibility = "visible";
       }
@@ -37,8 +36,19 @@ window.addEventListener("load", function() {
       let items = document.getElementsByClassName("dropdown");
       let i;
       for (i = 0; i < items.length; i++) {
-        console.log("visible");
         items[i].style.display = "none";
+      }
+    });
+    document.getElementById("mobile_drop").addEventListener("click", function(){
+      let menu = document.getElementsByClassName("mobile_hidden");
+      let i;
+      for (i=0; i< menu.length; i++){
+        if (menu[i].style.display === "flex"){
+          menu[i].style.display = "none";
+        }
+        else{
+          menu[i].style.display = "flex";
+        }
       }
     });
 });
