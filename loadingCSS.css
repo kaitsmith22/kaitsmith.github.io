@@ -12,8 +12,17 @@ body {
 } */
 h1 {
   font-family: Georgia, Tahoma, sans-serif;
-  font-size: 3em;
-  padding: 5% 5% 5% 10%;
+  word-wrap: break-word;
+white-space: normal
+  font-size: 37px;
+  padding: 2% 2% 2% 5%;
+
+}
+@media (min-device-width: 768px){
+  h1 {
+    font-size: 3em;
+    padding: 5% 5% 5% 10%;
+  }
 }
 nav {
   display:block
@@ -48,7 +57,7 @@ p {
   margin: 1%;
 }
 
-@media (min-width: 768px) {
+@media (min-device-width: 768px) {
   #mobile_drop {
     display: none;
   }
@@ -192,6 +201,7 @@ figcaption {
 }
 figure {
   position: relative;
+  width: 100%;
 }
 figure #project_title{
   position: absolute;
@@ -333,10 +343,15 @@ svg {
   background-color:white;
   width:90%;
   margin-left: 5%;
+  padding: 5%;
 }
 #content {
   padding-left: 3%;
   padding-right: 3%;
+}
+.signal_imgs{
+  min-width: 100px;
+  width: inherit;
 }
 /* Twitter API */
 .columns {
